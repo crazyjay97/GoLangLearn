@@ -12,12 +12,13 @@ func main() {
 			print("--",i,"--",s,"\n")
 		}
 	*/
+	port := "8080"
 	argsLenth := len(args)
 	if argsLenth != 2 {
 		print("please enter the port\n")
 		return
 	}
-	port := args[1]
+	port = args[1]
 	portLenth := len(port)
 	if portLenth != 4 {
 		print("error port\n")
