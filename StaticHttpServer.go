@@ -15,16 +15,16 @@ func main() {
 	*/
 	//初始化端口以及检验用户输入
 	port := "8080"
-	argsLenth := len(args)
-	if argsLenth != 2 && argsLenth != 1 {
+	argsLength := len(args)
+	if argsLength != 2 && argsLength != 1 {
 		print("please enter the port\n")
 		return
 	}
-	if argsLenth == 2 {
+	if argsLength == 2 {
 		port = args[1]
 	}
-	portLenth := len(port)
-	if portLenth != 4 {
+	portLength := len(port)
+	if portLength != 4 {
 		print("error port\n")
 		return
 	}
