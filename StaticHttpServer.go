@@ -20,7 +20,7 @@ func main() {
 		print("please enter the port\n")
 		return
 	}
-	if argsLenth == 2{
+	if argsLenth == 2 {
 		port = args[1]
 	}
 	portLenth := len(port)
@@ -32,9 +32,10 @@ func main() {
 	loadPage("", "")
 	var handle http.Handler
 	//绑定host 开始服务
-	print("the server is starting...", "\n")
-	http.ListenAndServe("0.0.0.0:"+port, handle)
-
+	print("the server is starting...the port:", port, "\n")
+	err := http.ListenAndServe("0.0.0.0:"+port, handle)
+	print(err, "\n")
+	print("please review your port")
 }
 
 func loadPage(path string, urlPath string) {
@@ -69,7 +70,6 @@ func loadHandle(path string, urlPath string) {
 		writer.Write(bytes)
 	})
 }
-
 
 //拼接路径
 func appendPath(prefixPath string, suffixPath string) string {
